@@ -737,7 +737,12 @@ extern int __overflow (FILE *, int);
 # 2 "4-puts.c" 2
 
 
-# 3 "4-puts.c"
+
+
+
+
+
+# 8 "4-puts.c"
 int main(void)
 {
 puts("\"Programming is like building a multilingual puzzle");
