@@ -1,9 +1,9 @@
 #include <stdio.h>
 /**
- * File: 4-puts.c
- * Author: Emanuel J. Rosa Alamo
- * Date: October-22-2024
- * Description: Este programa se usa el comando puts
+ * main - Prints exactly "Programming is like building a multilingual puzzle,"
+ *        followed by a new line.
+ *
+ * Return: 0 on success
  */
 int main(void)
 {
