@@ -1,19 +1,4 @@
-	.file	"6-size.c"
-	.text
-	.section	.rodata
-.LC0:
-	.string	"Size of a char: %lu bytes(s)\n"
-.LC1:
-	.string	"Size of a int: %lu bytes(s)\n"
-	.align 8
-.LC2:
-	.string	"Size of a long int: %lu bytes(s)\n"
-	.align 8
-.LC3:
-	.string	"Size of a long long int: %lu bytes(s)\n"
-	.align 8
-.LC4:
-	.string	"Size of a float: %lu bytes(s)\n"
+	.file	"main.c"
 	.text
 	.globl	main
 	.type	main, @function
@@ -25,31 +10,6 @@ main:
 	.cfi_offset 6, -16
 	movq	%rsp, %rbp
 	.cfi_def_cfa_register 6
-	movl	$1, %esi
-	leaq	.LC0(%rip), %rax
-	movq	%rax, %rdi
-	movl	$0, %eax
-	call	printf@PLT
-	movl	$4, %esi
-	leaq	.LC1(%rip), %rax
-	movq	%rax, %rdi
-	movl	$0, %eax
-	call	printf@PLT
-	movl	$8, %esi
-	leaq	.LC2(%rip), %rax
-	movq	%rax, %rdi
-	movl	$0, %eax
-	call	printf@PLT
-	movl	$8, %esi
-	leaq	.LC3(%rip), %rax
-	movq	%rax, %rdi
-	movl	$0, %eax
-	call	printf@PLT
-	movl	$4, %esi
-	leaq	.LC4(%rip), %rax
-	movq	%rax, %rdi
-	movl	$0, %eax
-	call	printf@PLT
 	movl	$0, %eax
 	popq	%rbp
 	.cfi_def_cfa 7, 8
