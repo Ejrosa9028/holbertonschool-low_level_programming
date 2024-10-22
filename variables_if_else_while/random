@@ -1540,5 +1540,18 @@ int main(void)
 # 14 "0-positive_or_negative.c"
                       / 2;
 
+
+ if (n > 0)
+ {
+ printf ("%d is positive\n", n);
+ }
+ else if (n == 0)
+ {
+ printf("%d is zero\n", n);
+ }
+ else
+ {
+ printf("%d is negaive\n", n);
+ }
  return (0);
 }
