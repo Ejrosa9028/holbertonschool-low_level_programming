@@ -8,18 +8,18 @@
  */
 int main(void)
 {
-        int i = 0;
-        char num = '0';
+	int i = 0;
+	char num = '0';
 
-        while (i < 10)
-        {
-                putchar(num);
-                num++;
+	while (i < 10)
+	{
+		putchar(num);
+		num++;
 
-                i++;
-        }
+		i++;
+	}
 
-        putchar('\n');
+	putchar('\n');
 
-        return (0);
+	return (0);
 }
