@@ -11,19 +11,19 @@ int main(void)
 	char character = 'a';
 	int i = 0;
 
-	while (i < 25)
+	while (i < 24)
 	{
 		putchar (character);
 		character = character + 1;
 
-		if (character == 'q')
+		if (character == 'e' || character == 'q')
 		{
 			character = character + 1;
 		}
 
-		if (i == 24)
+		if (i == 23)
 		{
-		putchar ('\n');
+			putchar ('\n');
 		}
 
 		i++;
