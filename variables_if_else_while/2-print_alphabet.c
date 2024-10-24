@@ -16,6 +16,12 @@ while (i < 26)
 {
 putchar (character);
 character = character + 1;
+
+if (i == 25)
+{
+putchar ('\n');
+}
+
 i++;
 }
 
