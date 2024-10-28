@@ -7,12 +7,12 @@
  */
 int _isupper(int c)
 {
-	if (c <= 122 && c >= 97)
+	if (c <= 90 && c >= 65)
 	{
-		return (0);
+		return (1);
 	}
 	else
 	{
-		return (1);
+		return (0);
 	}
 }
