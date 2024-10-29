@@ -29,9 +29,12 @@ void multiple(void)
 		{
 			if (num == 100)
 			{
-				printf("Buzz");
+				printf("Buzz\n");
 			}
-			printf("Buzz ");
+			else
+			{
+				printf("Buzz ");
+			}
 		}
 		else if (resultado_3 == 0 && resultado_5 == 0)
 		{
@@ -43,8 +46,6 @@ void multiple(void)
 			printf("%d ", num);
 		}
 	}
-
-	printf("\n");
 }
 
 /**
