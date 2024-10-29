@@ -27,7 +27,7 @@ void multiple(void)
 		}
 		else if (resultado_5 == 0 && resultado_3 != 0)
 		{
-			if (num == 99)
+			if (num == 100)
 			{
 				printf("Buzz");
 			}
