@@ -16,7 +16,7 @@ void rev_string(char *s)
 	int star = 0;
 	int end = length - 1;
 
-	while (star != end)
+	while (star < end)
 	{
 		char tmp = s[star];
 
