@@ -12,7 +12,29 @@
  */
 unsigned int _strspn(char *s, char *accept)
 {
-	int length = strspn(s, accept);
+	unsigned int length = 0;
+	char *ptr;
+
+	while (*s != '\0')
+	{
+		ptr = accept;
+		while (*ptr != '\0')
+		{
+			if (*s == *ptr)
+			{
+				length++;
+				break;
+			}
+
+			ptr++;
+		}
+
+		if (!*ptr)
+		{
+			break;
+		}
+		s++;
+	}
 
 	return (length);
 }
