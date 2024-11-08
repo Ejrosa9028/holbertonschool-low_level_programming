@@ -4,15 +4,12 @@
  * _sqrt_recursion - Returns the natural square root of a number.
  * @n: The number to calculate the square root of.
  *
- * Return: The square root of the number, or -1 if it doesn't have a natural square root.
+ * Return: The square root of the number, or -1
+ * if it doesn't have a natural square root.
  */
 int _sqrt_recursion(int n)
 {
-    if (n < 0)  /*La raíz cuadrada de un número negativo no es un número real*/
-    {
-        return -1;
-    }
-    return _sqrt_helper(n, 1);  /*Llamada auxiliar para comenzar desde 1*/
+	return (_sqrt_helper(n, 1));  /*Llamada auxiliar para comenzar desde 1*/
 }
 
 /**
@@ -24,14 +21,14 @@ int _sqrt_recursion(int n)
  */
 int _sqrt_helper(int n, int i)
 {
-    if (i * i > n)  /*Si i^2 es mayor que n, entonces no tiene raíz cuadrada exacta*/
-    {
-        return -1;
-    }
-    if (i * i == n)  /* Si i^2 es igual a n, entonces hemos encontrado la raíz cuadrada*/
-    {
-        return i;
-    }
-    return _sqrt_helper(n, i + 1);  /*Llamada recursiva incrementando i*/
-}
+	if (i * i == n)
+	{
+		return (i);
+	}
 
+	if (i * i > n)  /*Si i^2 es mayor que n, no tiene raíz cuadrada exacta*/
+	{
+		return (-1);
+	}
+	return (_sqrt_helper(n, i + 1));  /*Llamada recursiva incrementando i*/
+}
