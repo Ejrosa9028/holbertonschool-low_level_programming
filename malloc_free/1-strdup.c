@@ -26,7 +26,7 @@ char *_strdup(char *str)
 	}
 
 	/*Asignar memoria para duplicar el string*/
-	tmp = malloc(sizeof(char) * *str);
+	tmp = malloc(sizeof(char) * length + 1);
 
 	if (tmp == 0)
 	{
