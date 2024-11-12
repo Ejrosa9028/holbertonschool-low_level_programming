@@ -12,58 +12,43 @@
 char *str_concat(char *s1, char *s2)
 {
 	char *tmp;
-	int i;
-	int j = 0;
-	int len1 = 0;
-	int len2 = 0;
+	int i, j = 0;
+	int len1 = 0, len2 = 0;
 
-	/*Si s1 es igual a 0, devuelve NULL*/
-	if (s1 == 0)
+	if (s1 == 0) /*Si s1 es igual a 0, devuelve NULL*/
 	{
 		s1 = " ";
 	}
-
-	/*Si s2 es igual a 0, devuelve NULL*/
-	if (s2 == 0)
+	else if (s2 == 0) /*Si s2 es igual a 0, devuelve NULL*/
 	{
 		s2 = " ";
 	}
 
-	/*Calcula el largo de s1*/
-	while (s1[len1] != '\0')
+	for (; s1[len1] != '\0'; len1++) /*Calcula el largo de s1 y s2*/
 	{
-		len1++;
+		for (; s2[len2] != '\0'; len2++)
+		{
+		}
 	}
-
-	/*Calcula el largo de s2*/
-	while (s2[len2] != '\0')
-	{
-		len2++;
-	}
-
 	/*Asigna memoria para el string*/
-	tmp = malloc(sizeof(char) * (len1 + len2 + 1)); /*+1 por el Null*/
+	tmp = malloc(sizeof(char) * (len1 + len2 + 1)); /*+1 por el nulo*/
 
-	/*Si el malloc llega a 0, devuelve NULL*/
-	if (tmp == 0)
+	if (tmp == 0) /*Si el malloc llega a 0, devuelve NULL*/
 	{
 		return (NULL);
 	}
 
-	/*copia el primer string (s1) a tmp*/
-	for (i = 0; i < len1; i++)
+	for (i = 0; i < len1; i++) /*Copia el primer string (s1) a tmp*/
 	{
 		tmp[i + j] = s1[i];
 	}
 
-	/*Copia el segundo string (s2) a tmp*/
-	for (j = 0; j < len2; j++)
+	for (j = 0; j < len2; j++) /*Copia el segundo string (s2) a tmp*/
 	{
 		tmp[i + j] = s2[j];
 	}
 
-	/*Terminación nula de la cadena concatenada*/
-	tmp[i + j] = '\0';
+	tmp[i + j] = '\0'; /*Terminacion nula de la cadena concatenada*/
 
 	return (tmp);
 }
