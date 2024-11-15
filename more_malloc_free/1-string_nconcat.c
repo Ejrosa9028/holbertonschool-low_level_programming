@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <string.h>
+#include "main.h"
 
 /**
  * string_nconcat - Concatenates two strings with s of the second string.
@@ -16,7 +17,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	if (s1 == NULL) /*Si s1 es NULL, tratamos como cadena vacia*/
 		s1 = "";
-
 	if (s2 == NULL) /*Si s2 es NULL, tratamos como cadena vacia*/
 		s2 = "";
 
