@@ -14,10 +14,10 @@
  */
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
-    if (d != NULL)  /* Check if the pointer is not NULL */
-    {
-        d->name = name;   /* Initialize the name of the dog */
-        d->age = age;     /* Initialize the age of the dog */
-        d->owner = owner; /* Initialize the owner of the dog */
-    }
+	if (d != NULL)  /* Check if the pointer is not NULL */
+	{
+		d->name = name;   /* Initialize the name of the dog */
+		d->age = age;     /* Initialize the age of the dog */
+		d->owner = owner; /* Initialize the owner of the dog */
+	}
 }
