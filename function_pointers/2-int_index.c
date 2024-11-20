@@ -3,6 +3,14 @@
 #include <stdlib.h>
 #include <stddef.h>
 
+/**
+ * int_index - copies the string pointed to by src
+ * @array: pointer to the destination buffer
+ * @size: pointer to the source string
+ * @cmp: pointer to the source
+ *
+ * Return: pointer to dest
+ */
 int int_index(int *array, int size, int (*cmp)(int))
 {
 	int i;
