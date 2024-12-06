@@ -4,7 +4,7 @@
 #include "lists.h"
 
 /**
- * free_dlistint - Frees a list_t list.
+ * free_dlistint - Frees a dlistint_t list.
  * @head: The head of the list to be freed.
  */
 void free_dlistint(dlistint_t *head)
@@ -15,9 +15,6 @@ void free_dlistint(dlistint_t *head)
 	{
 		temp = head;
 		head = head->next;
-		head = head->prev;
-		free(temp->next);
-		free(temp->prev);
 		free(temp);
 	}
 }
