@@ -1,45 +1,52 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include "lists.h"
+#include <stdlib.h>  /* For malloc */
 
 /**
- * add_node - Agrega un nuevo nodo al principio de una lista_t.
- * @head: Doble puntero a la cabeza de la lista.
- * @str: La cadena de caracteres que se almacenará en el nuevo nodo.
+ * add_node - Adds a new node at the beginning of the list
+ * @head: A pointer to the head of the list
+ * @str: The string to store in the new node
  *
- * Return: Dirección del nuevo nodo, o NULL si falló la operación.
+ * Return: A pointer to the new node
+ *
+ * Description: This function creates a new node, stores
+ * the provided string
+ *              in the new node, and adds it at the beginning of the list.
  */
 list_t *add_node(list_t **head, const char *str)
 {
-	list_t *new_node;  /* Puntero para el nuevo nodo */
+	list_t *new_node;
+	int len = 0;
+	int i;
+	char *str_copy;
 
-	/* Verificar si la cadena 'str' es NULL */
-	if (str == NULL)
+	new_node = (list_t *)malloc(sizeof(list_t));
+	if (new_node == NULL)
 	{
 		return (NULL);
 	}
 
-	/* Crear el nuevo nodo */
-	new_node = malloc(sizeof(list_t));
-
-	if (new_node == NULL) /* Verificar si malloc falló */
+	while (str[len] != '\0')
 	{
+		len++;
+	}
+
+	str_copy = (char *)malloc(sizeof(char) * (len + 1));
+	if (str_copy == NULL)
+	{
+		free(new_node);
 		return (NULL);
 	}
 
-	/* Asignar los valores al nuevo nodo */
-	new_node->str = strdup(str);  /* Duplicar la cadena */
-	if (new_node->str == NULL)     /* Verificar si strdup falló */
+	for (i = 0; i < len; i++)
 	{
-		free(new_node);  /* Liberar el nodo si strdup falla */
-		return (NULL);
+		str_copy[i] = str[i];
 	}
+	str_copy[len] = '\0';
 
-	new_node->len = strlen(str);  /* Asignar la longitud de la cadena */
-	new_node->next = *head;       /* Apuntar al nodo anterior(el antiguo cabeza)*/
+	new_node->str = str_copy;
+	new_node->len = len;
+	new_node->next = *head;
 
-	*head = new_node;             /* Actualizar la cabeza de la lista */
-
-	return (new_node);  /* Devolver la dirección del nuevo nodo */
+	*head = new_node;
+	return (new_node);
 }
